@@ -11,6 +11,14 @@ gem 'unicorn'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
+# BOOTSTRAMP
+gem "therubyracer"
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem "twitter-bootstrap-rails"
+
+#Autentificacion 
+gem 'devise'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
