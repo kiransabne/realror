@@ -2,7 +2,6 @@ class LandingController < ApplicationController
 	Devise::SessionsController.layout 'application'
 	
 	def index
-
 		def resource_name
 	      :user
 	    end
