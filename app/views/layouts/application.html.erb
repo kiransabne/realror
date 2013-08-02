@@ -44,7 +44,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Realror</a>
+          <%= link_to "RealRoR", root_path, :class => "brand" %>
           <div class="container nav-collapse">
             <ul class="nav">
               <li><%= link_to "Link1", "/path1"  %></li>
@@ -55,22 +55,19 @@
         </div>
       </div>
     </div>
-
+<br/><br/><br/><br/>
     <div class="container">
         <div class="row">
           <div class="span9">
             <%= bootstrap_flash %>
-            <p class="notice"><%= notice %></p>
-            <p class="alert"><%= alert %></p>
+            <p class="notice"><%= notice %> <%= alert %></p>
             <%= yield %>
           </div>
-          <br/><br/>
           <div class="span3">
             <div class="well sidebar-nav">
-              <h2>Sign up</h2>
+              <% if !user_signed_in? %>
 <%
-
-def resource_name
+      def resource_name
         :user
       end
 
@@ -83,23 +80,30 @@ def resource_name
       end
       
 %>
-              <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-                <%= devise_error_messages! %>
+          <h2>Sign in User</h2>
 
-                <div><%= f.label :email %><br />
-                <%= f.email_field :email, :autofocus => true %></div>
+          <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+            <div><%= f.label :email %><br />
+            <%= f.email_field :email, :autofocus => true %></div>
 
-                <div><%= f.label :password %><br />
-                <%= f.password_field :password %></div>
+            <div><%= f.label :password %><br />
+            <%= f.password_field :password %></div>
 
-                <div><%= f.label :password_confirmation %><br />
-                <%= f.password_field :password_confirmation %></div>
+            <% if devise_mapping.rememberable? -%>
+              <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+            <% end -%>
 
-                <div><%= f.submit "Sign up" %></div>
-              <% end %>
+            <div><%= f.submit "Sign in" %></div>
+          <% end %>
 
-              <%= render "devise/shared/links" %>
+          <%= render "devise/shared/links" %>
+<% else %>
 
+menu
+<br/><br/><br/><br/><br/>
+<%= link_to "logout", destroy_user_session_path, :method => :delete %>
+
+<% end %>
             </div><!--/.well -->
           </div><!--/span-->
         </div><!--/row-->

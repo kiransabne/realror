@@ -5,9 +5,12 @@ Realror::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'landing#index'
+  root 'landing#index'
   devise_for :users, :path => "/", :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'cmon_let_me_in' }
   devise_for :admins, :controllers => { :sessions => "admins/sessions", :registrations => "admins/registrations", :passwords => "admins/passwords" }
+  #match 'admin' => 'admins/sessions#new'
+  match '/admin', :to => "/admins/sessions#new", via: :all
+
   #devise_for :admins
 
   # devise_for :admins, :controllers => { :sessions => "admins/sessio ns" }
