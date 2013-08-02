@@ -1,9 +1,22 @@
 Realror::Application.routes.draw do
+  devise_for :users
+  devise_for :models
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
    root 'landing#index'
+
+   #match '/dashboard' => 'home#dashboard', :as => 'user_root'
+  #devise_for :Users do
+  #     get "/login", :to => "devise/sessions#new" # Add a custom sign in route for user sign in
+  #     get "/logout", :to => "devise/sessions#destroy" # Add a custom sing out route for user sign out
+  #     get "/register", :to => "devise/registrations#new" # Add a Custom Route for Registrations
+  #  end
+
+   #devise_for :users, :path => "auth", :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'cmon_let_me_in' }
+
+   #devise_for :admins, :controllers => { :sessions => "admins/sessions" }
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -60,17 +60,32 @@
         <div class="row">
           <div class="span9">
             <%= bootstrap_flash %>
+            <p class="notice"><%= notice %></p>
+            <p class="alert"><%= alert %></p>
             <%= yield %>
           </div>
+          <br/><br/>
           <div class="span3">
             <div class="well sidebar-nav">
-              <h3>Sidebar</h3>
-              <ul class="nav nav-list">
-                <li class="nav-header">Sidebar</li>
-                <li><%= link_to "Link1", "/path1"  %></li>
-                <li><%= link_to "Link2", "/path2"  %></li>
-                <li><%= link_to "Link3", "/path3"  %></li>
-              </ul>
+              <h2>Sign up</h2>
+
+              <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+                <%= devise_error_messages! %>
+
+                <div><%= f.label :email %><br />
+                <%= f.email_field :email, :autofocus => true %></div>
+
+                <div><%= f.label :password %><br />
+                <%= f.password_field :password %></div>
+
+                <div><%= f.label :password_confirmation %><br />
+                <%= f.password_field :password_confirmation %></div>
+
+                <div><%= f.submit "Sign up" %></div>
+              <% end %>
+
+              <%= render "devise/shared/links" %>
+
             </div><!--/.well -->
           </div><!--/span-->
         </div><!--/row-->
