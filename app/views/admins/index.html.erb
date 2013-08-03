@@ -14,7 +14,7 @@
       <tr>
         <td><%= a.email %></td>
         <td><%= link_to 'Edit', edit_admin_path(a) %></td>
-        <td><%= link_to 'Destroy', a, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', admin_path(a), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
