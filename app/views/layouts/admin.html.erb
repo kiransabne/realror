@@ -46,11 +46,20 @@
           </a>
           <a class="brand" href="#">Admin Layout</a>
           <div class="container nav-collapse">
+            <% if admin_signed_in? %>
             <ul class="nav">
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
+              <li><%= link_to "Products", "/path1"  %></li>
+              <li><%= link_to "Categories", "/path2"  %></li>
+              <li><%= link_to "Users", "/path3"  %></li>
+              <li><%= link_to "Admins", "/path3"  %></li>
             </ul>
+              
+              <p class="navbar-text pull-right">
+              Login as  
+              <a href="#"><%= current_admin.email %></a> &nbsp; &nbsp;
+              <%= link_to "Logout", destroy_admin_session_path, :method => :delete %>
+              </p>
+              <% end %>
           </div><!--/.nav-collapse -->
         </div>
       </div>
