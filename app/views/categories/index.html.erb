@@ -6,14 +6,25 @@
       <th>Category</th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
 
   <tbody>
     <% @categories.each do |category| %>
       <tr>
-        <td><%= category.name %></td>
+        <td><%= category.name %>
+          <% unless category.children.empty? %>
+           <ul id="sub-menu"> 
+             <% category.children.each do |subcategory| %>
+                <li> <%= subcategory.name %></li>
+             <% end %>
+           </ul>
+          <% end %>
+
+        </td>
         <td><%= link_to 'Edit', edit_category_path(category) %></td>
+        <td><%= link_to 'Add subcategory', new_category_path(:parent_id => category) %></td>
         <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -21,5 +32,6 @@
 </table>
 
 <br>
+
 
 <%= link_to 'New Category', new_category_path %>

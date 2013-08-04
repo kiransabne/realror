@@ -12,7 +12,7 @@ class CategoriesController < ApplicationController
 	  end
 
 	  def new
-	    @category = Category.new
+	    @category = Category.new(:parent_id => params[:parent_id]) 
 	  end
 
 	  def edit
@@ -53,7 +53,7 @@ class CategoriesController < ApplicationController
     end
 
     def category_params
-      params.require(:category).permit(:name)
+      params.require(:category).permit(:name, :parent_id)
     end
 
 end
