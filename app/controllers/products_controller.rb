@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
 	before_filter :authenticate_admin!
 	before_action :set_product, only: [:show, :edit, :update, :destroy]
+	before_filter :collection_for_parent_select, only: [:new, :update]
 
 	layout "admin"
 	
@@ -56,5 +57,19 @@ class ProductsController < ApplicationController
     def product_params
       params.require(:product).permit(:name, :descrioption, :category_id, :price)
     end
+
+    def collection_for_parent_select
+    	@categories_array = Category.all.map { |category| [category.name, category.id] }
+  	end
+
+  	def ancestry_options(items)
+	    result = []
+	    items.map do |item, sub_items|
+	      result << [yield(item), item.id]
+	      #this is a recursive call:
+	      result += ancestry_options(sub_items) {|i| "#{'-' * i.depth} #{i.name}" }
+	    end
+	    result
+  	end
 
 end
