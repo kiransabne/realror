@@ -10,6 +10,10 @@ gem 'unicorn'
 
 gem 'ancestry'
 
+#To upload a pictures
+gem 'paperclip'
+gem 'aws-sdk'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
