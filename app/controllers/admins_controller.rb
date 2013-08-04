@@ -25,7 +25,7 @@ class AdminsController < ApplicationController
 
 	    respond_to do |format|
 	      if @admin.save
-	        format.html { redirect_to @admin, notice: 'admin was successfully created.' }
+	        format.html { redirect_to admins_path, notice: 'admin was successfully created.' }
 	      else
 	        format.html { render action: 'new' }
 	      end
@@ -35,7 +35,7 @@ class AdminsController < ApplicationController
 	  def update
 	    respond_to do |format|
 	      if @admin.update(admin_params)
-	        format.html { redirect_to admins_path, notice: 'admintest was successfully updated.' }
+	        format.html { redirect_to admins_path, notice: 'admin was successfully updated.' }
 	      else
 	        format.html { render action: 'edit' }
 	      end
@@ -54,7 +54,7 @@ class AdminsController < ApplicationController
     end
 
     def admin_params
-      params.require(:admin).permit(:email)
+      params.require(:admin).permit(:email, :avatar)
     end
 
 end

@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 
 	    respond_to do |format|
 	      if @user.save
-	        format.html { redirect_to @user, notice: 'User was successfully created.' }
+	        format.html { redirect_to users_path, notice: 'User was successfully created.' }
 	      else
 	        format.html { render action: 'new' }
 	      end
@@ -54,7 +54,7 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:email)
+      params.require(:user).permit(:email, :avatar)
     end
 
 

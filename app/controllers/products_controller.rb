@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 	before_filter :authenticate_admin!
 	before_action :set_product, only: [:show, :edit, :update, :destroy]
-	before_filter :collection_for_parent_select, only: [:new, :update]
+	before_filter :collection_for_parent_select, only: [:new, :update, :edit]
 
 	layout "admin"
 	
@@ -55,7 +55,7 @@ class ProductsController < ApplicationController
     end
 
     def product_params
-      params.require(:product).permit(:name, :descrioption, :category_id, :price)
+      params.require(:product).permit(:name, :descrioption, :category_id, :price, :photo)
     end
 
     def collection_for_parent_select

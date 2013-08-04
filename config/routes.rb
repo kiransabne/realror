@@ -13,7 +13,7 @@ Realror::Application.routes.draw do
   #  get "admin", :to => "admins/sessions#new", via
   #end
 
-  match '/admin', :to => 'admin#index', via: [:get, :post]
+  #match '/admin', :to => 'admins#index', via: [:get, :post]
 
   #devise_for :admins
 
