@@ -17,10 +17,9 @@
         
     <div class="item active">
         <div class="row-fluid">
-          <div class="span3"><a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-          <div class="span3"><a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-          <div class="span3"><a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-          <div class="span3"><a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+          <% @products.each do |product| %>
+          <div class="span3"><%= image_tag product.photo.url(:medium) %></div>
+          <% end %>
         </div><!--/row-fluid-->
     </div><!--/item-->
      
