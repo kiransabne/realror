@@ -11,13 +11,17 @@
   </thead>
 
   <tbody>
-    <% @categories.each do |category| %>
+    <% @categories.each do |category| %> 
       <tr>
         <td><%= category.name %>
           <% unless category.children.empty? %>
            <ul id="sub-menu"> 
              <% category.children.each do |subcategory| %>
-                <li> <%= subcategory.name %></li>
+                <li> 
+                  <%= subcategory.name %> &nbsp;&nbsp;&nbsp;
+                  <%= link_to 'Edit', edit_category_path(subcategory) %>&nbsp;&nbsp;&nbsp;
+                  <%= link_to 'Destroy', subcategory, method: :delete, data: { confirm: 'Are you sure?' } %>
+                </li>
              <% end %>
            </ul>
           <% end %>

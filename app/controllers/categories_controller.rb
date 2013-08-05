@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
 	layout "admin"
 	
 	  def index
-		@categories = Category.all
+		@categories = Category.roots 
 	  end
 
 	  def show
