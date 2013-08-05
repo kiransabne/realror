@@ -27,6 +27,18 @@ Realror::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  #config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => 'smtp.sendgrid.net'}
+  config.paperclip_defaults = {
+          :storage => :s3,
+          :s3_credentials => {
+            :bucket => ENV['realror'],
+            :bucket => 'realror',
+            :access_key_id => 'AKIAJI6ENUZ72XB42ECA',
+            :secret_access_key => '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'
+          },
+          :path => ":class/:id/:basename_:style.:extension",
+          :url => ":s3_sg_url"
+      }
 
 end
