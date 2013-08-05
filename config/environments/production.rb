@@ -80,13 +80,13 @@ Realror::Application.configure do
 
   config.action_mailer.default_url_options = { :host => 'smtp.sendgrid.net'}
   config.paperclip_defaults = {
-          :storage =&gt; :s3,
-          :s3_credentials =&gt; {
-            :bucket =&gt; ENV['realror'],
-            :access_key_id =&gt; ENV['AKIAJI6ENUZ72XB42ECA'],
-            :secret_access_key =&gt; ENV['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']
+          :storage = :s3,
+          :s3_credentials = {
+            :bucket = ENV['realror'],
+            :access_key_id = ENV['AKIAJI6ENUZ72XB42ECA'],
+            :secret_access_key = ENV['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']
           },
-          :path =&gt; ":class/:id/:basename_:style.:extension",
-          :url =&gt; ":s3_sg_url"
+          :path = ":class/:id/:basename_:style.:extension",
+          :url = ":s3_sg_url"
       }
 end
