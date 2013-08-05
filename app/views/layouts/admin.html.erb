@@ -56,7 +56,10 @@
               
               <p class="navbar-text pull-right">
               Login as  
-              <%= link_to current_admin.email, edit_admin_path(current_admin) %></a> &nbsp; &nbsp;
+              <%= link_to current_admin.email, edit_admin_path(current_admin) %>&nbsp;&nbsp;
+              <%= link_to '<i class="icon-pencil icon-white"></i>'.html_safe, edit_admin_path(current_admin) %>&nbsp;&nbsp;
+              
+              &nbsp; &nbsp;
               <%= link_to "Logout", destroy_admin_session_path, :method => :delete %>
               </p>
               <% end %>

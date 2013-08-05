@@ -12,22 +12,20 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :avatar %><br>
+    <%= image_tag @admin.avatar.url(:thumb) %>
     <%= f.file_field :avatar %>
   </div>
+  <div class="field">
+    <%= f.label :email %> 
+    <%= f.text_field :email %>
+  </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
 
-<%= image_tag @admin.avatar.url %>
-<%= image_tag @admin.avatar.url(:medium) %>
-<%= image_tag @admin.avatar.url(:thumb) %>
+
 |
 <%= link_to 'Back', admin_path %>
