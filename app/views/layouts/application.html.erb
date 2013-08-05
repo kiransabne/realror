@@ -70,6 +70,15 @@
 
             <% if user_signed_in? %>
               <p class="navbar-text pull-right">
+              <% if I18n.locale == I18n.default_locale %>
+                <%= link_to "Espanish", :locale=>'es'%>
+
+              <% else %>
+                <%= link_to "English", :locale=>'en'%>
+
+              <%end%>
+
+              <%= t 'views.home.hello' %>&nbsp;&nbsp;&nbsp;
               Login as  
               <%= link_to current_user.email, edit_user_registration_path(current_user) %>&nbsp;&nbsp;
               <%= link_to '<i class="icon-pencil icon-white"></i>'.html_safe, edit_user_registration_path(current_user) %>&nbsp;&nbsp;

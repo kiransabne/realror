@@ -17,6 +17,8 @@ gem 'aws-sdk'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
+gem 'rails-i18n'
+
 # BOOTSTRAMP
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS

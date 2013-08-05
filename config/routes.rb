@@ -6,6 +6,9 @@ Realror::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'landing#index'
+
+  match '/:locale' => 'landing#index', via: [:get, :post]
+
   devise_for :users, :path => "/", :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'cmon_let_me_in' }
   devise_for :admins, :controllers => { :sessions => "admins/sessions", :registrations => "admins/registrations", :passwords => "admins/passwords" }
 

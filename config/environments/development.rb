@@ -41,4 +41,7 @@ Realror::Application.configure do
     }
   }
 
+  config.i18n.available_locales = ['es', :es]
+  config.i18n.available_locales = ['en', :en]
+
 end
