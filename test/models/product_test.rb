@@ -6,7 +6,7 @@ class ProductTest < ActiveSupport::TestCase
   	assert true
   end
 
-  def test_validations
+  def test_product_validations
   	product = Product.new
   	assert !product.save, "should not save product without name, category, price or description" 
   end
