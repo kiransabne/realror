@@ -5,6 +5,7 @@ es:
       welcome: “Bienvenido a Mi Empresa”
       signin: "Ingresar"
       signup: "Registrate"
+      logout: "Salir"
       forgotpassword: "Olvidaste tu contraseña?"
       email: "Correo electrónico"
       password: "Contraseña"

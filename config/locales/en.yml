@@ -5,6 +5,7 @@ en:
       welcome: “Welcome to   My Company”
       signin: "Sign In"
       signup: "Sign Up"
+      logout: "Logout"
       forgotpassword: "Forgot your password?"
       email: "Email"
       password: "Password"

@@ -1,4 +1,4 @@
-<h1>Listing Categories</h1>
+<h1>Categories</h1>
 
 <table class="table table-striped">
   <thead>
@@ -13,23 +13,25 @@
   <tbody>
     <% @categories.each do |category| %> 
       <tr>
-        <td><%= category.name %>
+        <td><strong><%= category.name %></strong>
           <% unless category.children.empty? %>
-           <ul id="sub-menu"> 
+           <table class="table table-striped">
              <% category.children.each do |subcategory| %>
-                <li> 
-                  <%= subcategory.name %> &nbsp;&nbsp;&nbsp;
-                  <%= link_to 'Edit', edit_category_path(subcategory) %>&nbsp;&nbsp;&nbsp;
-                  <%= link_to 'Destroy', subcategory, method: :delete, data: { confirm: 'Are you sure?' } %>
-                </li>
+                <tr> 
+                  <td><%= subcategory.name %></td>
+
+                  <td><%= link_to '<i class="icon-pencil"></i>'.html_safe, edit_category_path(subcategory), :class => 'btn btn-mini' %></td>
+                  <td><%= link_to '<i class="icon-remove icon-white"></i>'.html_safe, subcategory, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn  btn-danger btn-mini' %></td>
+
+                </tr>
              <% end %>
-           </ul>
+           </table>
           <% end %>
 
         </td>
-        <td><%= link_to 'Edit', edit_category_path(category) %></td>
-        <td><%= link_to 'Add subcategory', new_category_path(:parent_id => category) %></td>
-        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '<i class="icon-pencil"></i>'.html_safe, edit_category_path(category), :class => 'btn btn-mini' %></td>
+        <td><%= link_to 'Add subcategory', new_category_path(:parent_id => category), :class => 'btn btn-mini' %></td>
+        <td><%= link_to '<i class="icon-remove icon-white"></i>'.html_safe, category, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn  btn-danger btn-mini' %></td>
       </tr>
     <% end %>
   </tbody>

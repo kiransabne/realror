@@ -31,20 +31,22 @@
               </li>
               <% end %>
             </ul>
-
+            <p class="navbar-text pull-right">
             <% if user_signed_in? %>
-              <p class="navbar-text pull-right">
+              
               <%= t 'views.home.hello' %>&nbsp;&nbsp;&nbsp;
-              Login as  
+  
               <%= link_to current_user.email, edit_user_registration_path(current_user) %>&nbsp;&nbsp;
               <%= link_to '<i class="icon-pencil icon-white"></i>'.html_safe, edit_user_registration_path(current_user) %>&nbsp;&nbsp;
               
               &nbsp; &nbsp;
-              <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
-              </p>
+              <%= link_to t('views.home.logout'), destroy_user_session_path, :method => :delete %>
+              
+              <% else %>
+                <%= link_to t('views.home.signin'), user_session_path %>  
               <% end %>
 
-
+              </p>
           </div><!--/.nav-collapse -->
         </div>
       </div>
@@ -52,53 +54,10 @@
 <br/><br/><br/><br/>
     <div class="container">
         <div class="row">
-          <div class="span9">
+          <div class="span12">
             <%= bootstrap_flash %>
             <p class="notice"><%= notice %> <%= alert %></p>
             <%= yield %>
           </div>
-          <div class="span3">
-            <div class="well sidebar-nav">
-              <% if !user_signed_in? %>
-<%
-      def resource_name
-        :user
-      end
-
-      def resource
-        @resource ||= User.new
-      end
-
-      def devise_mapping
-        @devise_mapping ||= Devise.mappings[:user]
-      end
-      
-%>
-          <h2><%= t 'views.home.signin' %></h2>
-
-          <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-            <div><%= f.label t 'views.home.email' %><br />
-            <%= f.email_field :email, :autofocus => true %></div>
-
-            <div><%= f.label t 'views.home.password' %><br />
-            <%= f.password_field :password %></div>
-
-            <% if devise_mapping.rememberable? -%>
-              <div><%= f.check_box :remember_me %> <%= f.label t 'views.home.remember' %></div>
-            <% end -%>
-
-            <div><%= f.submit t 'views.home.signin' %></div>
-          <% end %>
-
-          <%= render "devise/shared/links" %>
-<% else %>
-
-menu
-<br/><br/><br/><br/><br/>
-<%= link_to "logout", destroy_user_session_path, :method => :delete %>
-
-<% end %>
-            </div><!--/.well -->
-          </div><!--/span-->
         </div><!--/row-->
 <%= render '/layouts/foter' %>        
