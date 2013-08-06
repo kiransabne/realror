@@ -3,6 +3,15 @@ es:
     home:
       hello: “Hola en español”
       welcome: “Bienvenido a Mi Empresa”
+      signin: "Ingresar"
+      signup: "Registrate"
+      forgotpassword: "Olvidaste tu contraseña?"
+      email: "Correo electrónico"
+      password: "Contraseña"
+      remember: "Recordar"
+      confirmation: "No recibiste la instrucciones de confirmacion?"
+      adminlogin: "Ingresar al Administrador"
+      home: "Inicio"
   date:
     abbr_day_names:
     - dom

@@ -1,0 +1,25 @@
+      <footer>
+        <p>
+          <% if I18n.locale == I18n.default_locale %>
+                <%= link_to "Espanish", :locale=>'es'%>
+
+              <% else %>
+                <%= link_to "English", :locale=>'en'%>
+
+              <%end%>
+
+          &copy; Company 2013
+        <%= link_to t('views.home.home'), admins_path, :method => :get %> |
+        <%= link_to t('views.home.adminlogin'), admins_path, :method => :get %> 
+        </p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    <!-- Javascripts
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <%= javascript_include_tag "application" %>
+
+  </body>
+</html>

@@ -3,6 +3,15 @@ en:
     home:
       hello: “Hello in english”
       welcome: “Welcome to   My Company”
+      signin: "Sign In"
+      signup: "Sign Up"
+      forgotpassword: "Forgot your password?"
+      email: "Email"
+      password: "Password"
+      remember: "Remember me"
+      confirmation: "Didn't receive confirmation instructions?"
+      adminlogin: "Login to Admin"
+      home: "Home"
   date:
     abbr_day_names:
     - Sun
