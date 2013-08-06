@@ -1,6 +1,6 @@
 <h1>Listing Users</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th></th>
@@ -15,8 +15,11 @@
       <tr>
         <td><%= image_tag u.avatar.url(:mini)   %></td>
         <td><%= u.email %></td>
-        <td><%= link_to 'Edit', edit_user_path(u) %></td>
-        <td><%= link_to 'Destroy', u, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '<i class="icon-pencil"></i>'.html_safe, edit_user_path(u), :class => 'btn btn-mini' %>
+        </td>
+        <td><%= link_to '<i class="icon-remove icon-white"></i>'.html_safe, u, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn  btn-danger btn-mini' %></td>
+
+
       </tr>
     <% end %>
   </tbody>
