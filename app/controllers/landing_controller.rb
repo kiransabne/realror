@@ -3,7 +3,7 @@ class LandingController < ApplicationController
 	
 	def index
 		 @categories = Category.roots
-          @products = Product.all.limit(4)
+          @products = Product.all
 	end
 
 

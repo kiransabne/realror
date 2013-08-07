@@ -1,3 +1,18 @@
 // Place all the styles related to the landing controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+a.carousel_prev, a.carousel_next {
+			background: url('carousel_arrow_right.jpg') no-repeat transparent;
+			width: 27px;
+			height: 155px;
+			display: block;
+			position: absolute;
+			top:110px;
+		}
+		a.carousel_prev {
+			left: 55px;
+			background: url('carousel_arrow_left.jpg') no-repeat transparent;}				
+		a.carousel_next {			
+			right: 250px;
+		}
