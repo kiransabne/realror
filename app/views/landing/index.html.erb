@@ -2,7 +2,33 @@
   
   <div class="span12">
 
+<!--
+<div id="carousel_container">
+    <div class="pull-right">
+        <button class="btn">See all products</button>
+    </div>   
 
+    <div id="carousel">
+        <% @products.each do |product| %>
+        <div class="product">
+            <div class="sale_corner">
+                <div class='save_tag'>Save </br> 30%</div>
+            </div>
+            <div class="product_photo">
+                <%= image_tag product.photo.url(:medium) %>
+            </div>
+            <div class="product_description">
+                holas
+            </div>        
+        </div>
+        <% end %>
+    </div>
+
+    <a href="#" class="carousel_prev" id="carousel_prev" ></a> 
+    <a href="#" class="carousel_next" id="carousel_next" ></a>     
+</div>
+
+-->
 
 <div class="accordion" id="accordion2">
 
@@ -26,12 +52,12 @@
             </div>   
 
             <div class="carousel">
-                <% @items = @products.where("category_id = #{category.id}") %>
+                <% @items = Product.where("category_id = #{category.id}") %>
                 <%= render :partial => "products", :collection => @items %>
             </div>
 
-            <a href="#" class="carousel_prev" ></a> 
-            <a href="#" class="carousel_next" ></a>     
+            <a href="#" class="carousel_prev" id="carousel_prev"></a> 
+            <a href="#" class="carousel_next" id="carousel_next"></a>
         </div>
       
       </div>
@@ -39,16 +65,14 @@
 
   </div>
 
-
-
 <% end %> 
 
 
 </div>
 
 
-
-   
-
   </div>
 </div>
+
+
+
