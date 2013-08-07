@@ -3,22 +3,52 @@
   <div class="span12">
 
 
-<div id="carousel_container">
-    <div class="carousel_title">
-        titulo de la categoria
-        <div class="pull-right">
-            <button class="btn">See all products</button>
-        </div>   
+
+<div class="accordion" id="accordion2">
+
+<% @categories.each do |category| %> 
+
+
+    <div class="accordion-group">
+
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse<%= category.id %>">
+        <strong><%= category.name %></strong>
+      </a>
     </div>
 
-    <div id="carousel">
-        <% @products.each do |product| %>
-                <div class="span2"><%= image_tag product.photo.url(:medium) %></div> 
-        <% end %>
+    <div id="collapse<%= category.id %>" class="accordion-body collapse">
+      <div class="accordion-inner">
+        
+        <div id="carousel_container">
+            <div class="pull-right">
+                <button class="btn">See all products</button>
+            </div>   
+
+            <div class="carousel">
+                <% @items = @products.where("category_id = #{category.id}") %>
+                <%= render :partial => "products", :collection => @items %>
+            </div>
+
+            <a href="#" class="carousel_prev" ></a> 
+            <a href="#" class="carousel_next" ></a>     
+        </div>
+      
+      </div>
     </div>
-    <a href="#" class="carousel_prev" id="carousel_prev"></a> 
-    <a href="#" class="carousel_next" id="carousel_next"></a>     
-</div>    
+
+  </div>
+
+
+
+<% end %> 
+
+
+</div>
+
+
+
+   
 
   </div>
 </div>

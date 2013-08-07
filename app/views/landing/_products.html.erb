@@ -1,0 +1,13 @@
+<% @items.each do |product| %>
+        <div class="product">
+            <div class="sale_corner">
+                <div class='save_tag'>Save </br> 30%</div>
+            </div>
+            <div class="product_photo">
+                <%= image_tag product.photo.url(:medium) %>
+            </div>
+            <div class="product_description">
+                holas
+            </div>        
+        </div>
+<% end %>
