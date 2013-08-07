@@ -82,8 +82,27 @@ a.carousel_prev, a.carousel_next {
 	min-height: 100px;
 	left: -7px;
 	position: relative;
+	line-height: 25px;
+	.price{
+		color:red;
+		font-weight:bold;
+	}
 }
 
+.product:hover{	
+	.product_description{
+		background-color: #FFF;
+		.name{
+			color:#000;
+		}
+		.time{
+			color:#878787;
+		}
+		.price{
+		font-size:14px;
+	}
+	}
+}
 
 
 

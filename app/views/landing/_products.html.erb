@@ -7,7 +7,9 @@
                 <%= image_tag product.photo.url(:medium) %>
             </div>
             <div class="product_description">
-                holas
+                <div class="name"><%= product.name %></div>
+                <div class="time">Added <%= time_ago_in_words(product.created_at) %></div>
+                <div class="price">Price: $<%= number_to_currency(product.price) %></div>
             </div>        
         </div>
 <% end %>
