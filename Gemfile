@@ -49,16 +49,16 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
-	
-group :test do
-  gem 'capybara'
-  gem 'shoulda-matchers'
-  gem 'database_cleaner'
-  gem 'factory_girl_rails'
-end
 
 group :test, :development do
   gem 'steak'
+  gem 'capybara'
+  gem "launchy"
+  gem 'shoulda-matchers'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'rspec-rails'
+  gem 'spork'
 end 
 
 # Use ActiveModel has_secure_password
