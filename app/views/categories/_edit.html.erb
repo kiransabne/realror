@@ -9,8 +9,13 @@
       <% end %>
       </ul>
     </div>
+  <% end %>  
+  <% if !@category.root? %>
+  <div class="field">
+    <%= f.label :parent_id %>
+    <%= f.select(:parent_id, @categories_array) %>
+  </div>
   <% end %>
-  <%= f.hidden_field :parent_id %>  
 
   <div class="field">
     <%= f.label :name %><br>

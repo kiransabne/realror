@@ -51,15 +51,25 @@ group :doc do
 end
 
 group :test, :development do
-  gem 'steak'
-  gem 'capybara'
-  gem "launchy"
-  gem 'shoulda-matchers'
-  gem 'database_cleaner'
-  gem 'factory_girl_rails'
-  gem 'rspec-rails'
-  gem 'spork'
+	gem 'steak'
+	gem 'capybara'
+	gem "launchy"
+	gem 'shoulda-matchers'
+	gem 'database_cleaner'
+	gem 'factory_girl_rails'
+	gem 'rspec-rails'
+	gem 'spork'
+	gem 'capybara-screenshot'
+	gem 'guard-rspec'
+	gem 'guard-livereload'
+	gem 'guard-spork'
+	gem 'rb-fsevent', '~> 0.9'
+	gem 'shoulda'
+	gem 'database_cleaner'
+	gem 'debugger'
 end 
+
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

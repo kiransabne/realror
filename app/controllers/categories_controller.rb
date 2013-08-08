@@ -16,7 +16,7 @@ class CategoriesController < ApplicationController
 	  end
 
 	  def edit
-	  
+	  	@categories_array = Category.roots.map { |category| [category.name, category.id] }
 	  end
 
 	  def create
