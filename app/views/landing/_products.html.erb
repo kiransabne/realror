@@ -1,5 +1,5 @@
 <% @items.each do |product| %>
-        <div class="product">
+        <div class="product" productid="<%= product.id %>" largeurl="<%= product.photo.url(:large) %>">
             <div class="sale_corner">
                 <div class='save_tag'>Save </br> 30%</div>
             </div>
