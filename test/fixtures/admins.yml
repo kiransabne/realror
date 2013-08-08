@@ -6,6 +6,9 @@
 #
 one:
  email: negoxp@gmail.com
+ encrypted_password: $2a$10$TZhADLBJLA86xqQI/okMvuXrwvNWvvkELiSnYV69wIFXJwZaToZ6C
+ 
 #
 two:
  email: playmanwe@hotmail.com
+ encrypted_password: $2a$10$TZhADLBJLA86xqQI/okMvuXrwvNWvvkELiSnYV69wIFXJwZaToZ6C
