@@ -4,7 +4,6 @@ class ProductsController < ApplicationController
 	before_filter :collection_for_parent_select, only: [:new, :update, :edit]
 
 	layout "admin"
-	
 
 	  def index
 		@products = Product.all

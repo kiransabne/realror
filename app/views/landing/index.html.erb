@@ -34,7 +34,6 @@
 
 <% @categories.each do |category| %> 
 
-
     <div class="accordion-group">
 
     <div class="accordion-heading">
@@ -52,7 +51,8 @@
             </div>   
 
             <div class="carousel">
-                <% @items = Product.where("category_id = #{category.id}") %>
+                
+                <% @items = Product.where(:category_id=>category.subtree_ids ) %>
                 <%= render :partial => "products", :collection => @items %>
             </div>
 
