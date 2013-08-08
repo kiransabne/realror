@@ -57,6 +57,10 @@ group :test do
   gem 'factory_girl_rails'
 end
 
+group :test, :development do
+  gem 'steak'
+end 
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
