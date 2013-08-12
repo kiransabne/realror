@@ -69,6 +69,7 @@ group :test, :development do
 	gem 'debugger'
 end 
 
+gem "haml"
 
 
 # Use ActiveModel has_secure_password

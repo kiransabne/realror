@@ -2,25 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$ ->
-
-		$(".carousel").carouFredSel({
-			circular: false,
-			infinite: true,
-			auto 	: false,
-			prev	: {	
-				button	: "#carousel_prev",
-				key		: "left"
-			},
-			next	: { 
-				button	: "#carousel_next",
-				key		: "right"
-			},
-			items   : 4,
-			height  : 300,
-			width   : 900
-		});
-
+$ ->	
 		$('.product').click -> 
 			$('#myModal').modal('show')
 			largephoto= $(this).attr('largeurl')
@@ -32,5 +14,9 @@ $ ->
 					$('#myModalLabel').text(json.name)
 					#$('.modal-body').text(json.description)
 					$('#imageshowlarge').attr('src', largephoto)
+
+		$('#myCarousel11').carousel({
+			interval: 10000
+		})
 					
 

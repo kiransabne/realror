@@ -1,7 +1,7 @@
 // Place all the styles related to the landing controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+/*
 a.carousel_prev, a.carousel_next {
 			background: url('carousel_arrow_right.jpg') no-repeat transparent;
 			width: 27px;
@@ -16,7 +16,7 @@ a.carousel_prev, a.carousel_next {
 		a.carousel_next {			
 			right: 70px;
 		}
-
+*/
 
 .product{	
 	-moz-box-shadow:    0 0 10px #000000;
@@ -142,6 +142,33 @@ a.carousel_prev, a.carousel_next {
 	    display:block;
 	}
 }
+
+.carousel {
+	margin-bottom: 0;
+	padding: 0 40px 30px 40px;
+}
+
+.carousel-control {
+	left: -12px;
+}
+.carousel-control.right {
+	right: -12px;
+}
+
+.carousel-indicators {
+	right: 50%;
+	top: auto;
+	bottom: 0px;
+	margin-right: -19px;
+}
+
+.carousel-indicators li {
+	background: #c0c0c0;
+}
+
+.carousel-indicators .active {
+background: #333333;
+} 
 
 
 
