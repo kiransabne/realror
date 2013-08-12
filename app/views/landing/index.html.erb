@@ -50,7 +50,6 @@
     <ol class="carousel-indicators">
         <li data-target="#carousel<%= category.id %>" data-slide-to="0" class="active"></li>
         <li data-target="#carousel<%= category.id %>" data-slide-to="1"></li>
-        <li data-target="#carousel<%= category.id %>" data-slide-to="2"></li>
     </ol>
      
     <!-- Carousel items -->
@@ -58,33 +57,45 @@
         
     <div class="item active">
         <div class="row-fluid">
-          <% @items = Product.where(:category_id=>category.subtree_ids ).limit(2) %>
-          <% #@items = Product.limit(2) %>
-          <%= render :partial => "products", :collection => @items %>
-          <!--
-          <div class="span3"><a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-          <div class="span3"><a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-          <div class="span3"><a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-          <div class="span3"><a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-          -->
+          <% items = Product.where(:category_id=>category.subtree_ids ).limit(4) %>
+          <% items.each do |product| %>
+          <div class="product" productid="<%= product.id %>" largeurl="<%= product.photo.url(:large) %>">
+            <div class="sale_corner">
+                <div class='save_tag'>Save </br> 30%</div>
+            </div>
+            <div class="product_photo">
+                <%= image_tag product.photo.url(:medium) %>
+                <div class="view">View</div>
+            </div>
+            <div class="product_description">
+                <div class="name"><%= product.name %></div>
+                <div class="time">Added <%= time_ago_in_words(product.created_at) %></div>
+                <div class="price">Price: $<%= number_to_currency(product.price) %></div>
+            </div>        
+          </div>
+        <% end %>
         </div><!--/row-fluid-->
     </div><!--/item-->
      
     <div class="item">
         <div class="row-fluid">
-            <div class="span3"><a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-            <div class="span3"><a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-            <div class="span3"><a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-            <div class="span3"><a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-        </div><!--/row-fluid-->
-    </div><!--/item-->
-     
-    <div class="item">
-        <div class="row-fluid">
-            <div class="span3"><a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-            <div class="span3"><a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-            <div class="span3"><a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
-            <div class="span3"><a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+          <% items = Product.where(:category_id=>category.subtree_ids ).limit(4).offset(4) %>
+          <% items.each do |product| %>
+          <div class="product" productid="<%= product.id %>" largeurl="<%= product.photo.url(:large) %>">
+            <div class="sale_corner">
+                <div class='save_tag'>Save </br> 30%</div>
+            </div>
+            <div class="product_photo">
+                <%= image_tag product.photo.url(:medium) %>
+                <div class="view">View</div>
+            </div>
+            <div class="product_description">
+                <div class="name"><%= product.name %></div>
+                <div class="time">Added <%= time_ago_in_words(product.created_at) %></div>
+                <div class="price">Price: $<%= number_to_currency(product.price) %></div>
+            </div>        
+          </div>
+          <% end %>
         </div><!--/row-fluid-->
     </div><!--/item-->
      
